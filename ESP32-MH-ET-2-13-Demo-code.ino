@@ -4,7 +4,8 @@
 #include <Fonts/FreeMonoBold9pt7b.h>
 
 GxEPD2_3C<GxEPD2_213c, GxEPD2_213c::HEIGHT> display(GxEPD2_213c(/*CS=5*/ SS, /*DC=*/ 22, /*RST=*/ 21, /*BUSY=*/ 4));
-
+// For black and white. Remember to change the _YELLOW colour
+//GxEPD2_BW<GxEPD2_213_flex, GxEPD2_213_flex::HEIGHT> display(GxEPD2_213_flex(/*CS=5*/ SS, /*DC=*/ 22, /*RST=*/ 21, /*BUSY=*/ 4));
 
 void setup() {
   Serial.begin(115200);
@@ -24,7 +25,7 @@ void setup() {
   display.setCursor(0, 20);
   display.print(HelloWorld);
 
-  display.setTextColor(GxEPD_YELLOW);
+//  display.setTextColor(GxEPD_YELLOW);
   display.setCursor(0, 60);
   display.print(HelloWorld);
   display.display(false); // full update
